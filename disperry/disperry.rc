@@ -64,11 +64,11 @@ IDR_MAINFRAME           ICON                    "res\\disperry.ico"
 
 IDD_ABOUTBOX DIALOG  0, 0, 187, 102
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "バージョン情報 disperry"
+CAPTION "Version info disperry"
 FONT 9, "MS UI Gothic"
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,130,81,50,14
-    CTEXT           "disperry アプリケーション v1.0\n\n(c) Copyright 2017",IDC_STATIC,25,57,78,
+    CTEXT           "disperry Application v1.0\n\n(c) Copyright 2017",IDC_STATIC,25,57,78,
                     32
     ICON            IDR_MAINFRAME,IDC_STATIC,55,26,18,20
     GROUPBOX        "",IDC_STATIC,7,7,115,88
@@ -77,11 +77,11 @@ END
 
 IDD_PROCESSBOX DIALOGEX 0, 0, 150, 60
 STYLE DS_MODALFRAME | WS_CAPTION | WS_POPUP | WS_SYSMENU
-CAPTION "処理中"
+CAPTION "Processing..."
 FONT 9, "MS UI Gothic"
 BEGIN
-    CTEXT           "逆アセンブル中です\n中断する場合は中断ボタンをクリックしてください", IDC_PROCESS_MESSAGE, 15, 10, 126, 17, SS_CENTER, WS_EX_LEFT
-    DEFPUSHBUTTON   "中断", IDABORT, 50, 35, 50, 14, 0, WS_EX_LEFT
+    CTEXT           "Disassembling...\nClick Abort button if you want to stop disassemble.", IDC_PROCESS_MESSAGE, 15, 10, 126, 17, SS_CENTER, WS_EX_LEFT
+    DEFPUSHBUTTON   "Abort", IDABORT, 50, 35, 50, 14, 0, WS_EX_LEFT
 END
 
 
@@ -90,45 +90,45 @@ STYLE DS_SETFONT | WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU
 CAPTION "disperry"
 FONT 9, "MS UI Gothic"
 BEGIN
-    DEFPUSHBUTTON   "逆アセンブル", ID_DISASM, 122, 305, 50, 14, 0, WS_EX_LEFT
-    PUSHBUTTON      "情報...", ID_APP_ABOUT, 176, 305, 50, 14, 0, WS_EX_LEFT
-    PUSHBUTTON      "終了", IDEXIT, 231, 305, 50, 14, 0, WS_EX_LEFT
-    LTEXT           "入力", IDC_STATIC_INPUT, 12, 18, 15, 9, SS_LEFT, WS_EX_LEFT
+    DEFPUSHBUTTON   "Disassemble", ID_DISASM, 122, 305, 50, 14, 0, WS_EX_LEFT
+    PUSHBUTTON      "Info...", ID_APP_ABOUT, 176, 305, 50, 14, 0, WS_EX_LEFT
+    PUSHBUTTON      "Exit", IDEXIT, 231, 305, 50, 14, 0, WS_EX_LEFT
+    LTEXT           "Input", IDC_STATIC_INPUT, 12, 18, 15, 9, SS_LEFT, WS_EX_LEFT
     EDITTEXT        IDC_EDIT_INPUT, 35, 14, 230, 16, ES_AUTOHSCROLL, WS_EX_ACCEPTFILES
     PUSHBUTTON      "...", IDC_BUTTON_INPUT, 267, 14, 15, 14, 0, WS_EX_LEFT
-    LTEXT           "出力", IDC_SATIC_OUTPUT, 12, 39, 15, 9, SS_LEFT, WS_EX_LEFT
+    LTEXT           "Output", IDC_SATIC_OUTPUT, 12, 39, 15, 9, SS_LEFT, WS_EX_LEFT
     EDITTEXT        IDC_EDIT_OUTPUT, 34, 35, 230, 16, ES_AUTOHSCROLL, WS_EX_ACCEPTFILES
     PUSHBUTTON      "...", IDC_BUTTON_OUTPUT, 267, 36, 15, 14, 0, WS_EX_LEFT
-    GROUPBOX        "設定", IDC_GROUP_CONFIG, 10, 58, 270, 240, 0, WS_EX_LEFT
-    AUTOCHECKBOX    "0x200バイトヘッダをスキップする (-n)", IDC_CHECK_HEADER, 20, 75, 108, 8, WS_GROUP, WS_EX_LEFT
-    AUTOCHECKBOX    "HEXダンプを出力しない (-t)", IDC_CHECK_NOHEX, 150, 75, 92, 8, WS_GROUP, WS_EX_LEFT
-    AUTOCHECKBOX    "アキュムレータを8ビットモードにする (-a)", IDC_CHECK_ACCUM, 20, 97, 113, 8, WS_GROUP, WS_EX_LEFT
-    AUTOCHECKBOX    "インデクスレジスタを8ビットモードにする (-x)", IDC_CHECK_INDEX, 150, 97, 127, 8, WS_GROUP, WS_EX_LEFT
-    AUTOCHECKBOX    "バンクをまたいで逆アセンブルしない (-e)", IDC_CHECK_BOUNDARY, 20, 115, 116, 8, WS_GROUP, WS_EX_LEFT
-    AUTOCHECKBOX    "RTS/RTL/RTI の後に空行を入れる (-p)", IDC_CHECK_SPLIT, 150, 115, 122, 8, WS_GROUP, WS_EX_LEFT
-    AUTOCHECKBOX    "1バンクのみ逆アセンブルする (-b)", IDC_CHECK_BANK, 20, 135, 98, 8, WS_GROUP, WS_EX_LEFT
-    RTEXT           "バンク", IDC_STATIC_BANK, 148, 135, 22, 9, NOT WS_GROUP | SS_RIGHT, WS_EX_LEFT
+    GROUPBOX        "Settings", IDC_GROUP_CONFIG, 10, 58, 270, 240, 0, WS_EX_LEFT
+    AUTOCHECKBOX    "Skip 0x200 bytes header (-n)", IDC_CHECK_HEADER, 20, 75, 108, 8, WS_GROUP, WS_EX_LEFT
+    AUTOCHECKBOX    "Don't output HEX (-t)", IDC_CHECK_NOHEX, 150, 75, 92, 8, WS_GROUP, WS_EX_LEFT
+    AUTOCHECKBOX    "Start in 8-bit accumulator (-a)", IDC_CHECK_ACCUM, 20, 97, 113, 8, WS_GROUP, WS_EX_LEFT
+    AUTOCHECKBOX    "Start in 8-bit X/Y regs (-x)", IDC_CHECK_INDEX, 150, 97, 127, 8, WS_GROUP, WS_EX_LEFT
+    AUTOCHECKBOX    "Turn off bank-boundary (-e)", IDC_CHECK_BOUNDARY, 20, 115, 116, 8, WS_GROUP, WS_EX_LEFT
+    AUTOCHECKBOX    "Blank lines after RTS,RTL,RTI (-p)", IDC_CHECK_SPLIT, 150, 115, 122, 8, WS_GROUP, WS_EX_LEFT
+    AUTOCHECKBOX    "Disassemble a bank only (-b)", IDC_CHECK_BANK, 20, 135, 98, 8, WS_GROUP, WS_EX_LEFT
+    RTEXT           "Bank", IDC_STATIC_BANK, 148, 135, 22, 9, NOT WS_GROUP | SS_RIGHT, WS_EX_LEFT
     EDITTEXT        IDC_EDIT_BANK, 175, 133, 40, 14, ES_AUTOHSCROLL | ES_UPPERCASE, WS_EX_LEFT
-    AUTOCHECKBOX    "HEXダンプのみ出力する (-d)", IDC_CHECK_HEXONLY, 20, 155, 89, 8, WS_GROUP, WS_EX_LEFT
-    RTEXT           "HEXダンプ出力幅", IDC_STATIC_HEX_WIDTH, 120, 155, 50, 9, NOT WS_GROUP | SS_RIGHT, WS_EX_LEFT
+    AUTOCHECKBOX    "Hex dump only (-d)", IDC_CHECK_HEXONLY, 20, 155, 89, 8, WS_GROUP, WS_EX_LEFT
+    RTEXT           "HEX dump width", IDC_STATIC_HEX_WIDTH, 120, 155, 50, 9, NOT WS_GROUP | SS_RIGHT, WS_EX_LEFT
     EDITTEXT        IDC_EDIT_HEXWIDTH, 175, 152, 40, 14, ES_AUTOHSCROLL, WS_EX_LEFT
     CONTROL         "", IDC_SPIN_HEXWIDTH, UPDOWN_CLASS, UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_AUTOBUDDY | UDS_SETBUDDYINT, 205, 152, 10, 14, WS_EX_LEFT
-    AUTOCHECKBOX    "オリジンモード (-g)", IDC_CHECK_ORIGIN, 20, 175, 59, 8, WS_GROUP, WS_EX_LEFT
-    RTEXT           "アドレス", IDC_STATIC_ORIGIN_ADR, 148, 175, 22, 9, NOT WS_GROUP | SS_RIGHT, WS_EX_LEFT
+    AUTOCHECKBOX    "Set origin (-g)", IDC_CHECK_ORIGIN, 20, 175, 59, 8, WS_GROUP, WS_EX_LEFT
+    RTEXT           "Address", IDC_STATIC_ORIGIN_ADR, 148, 175, 22, 9, NOT WS_GROUP | SS_RIGHT, WS_EX_LEFT
     EDITTEXT        IDC_EDIT_ORIGIN_ADR, 175, 173, 40, 14, ES_AUTOHSCROLL | ES_UPPERCASE, WS_EX_LEFT
-    AUTOCHECKBOX    "逆アセンブルの開始アドレスと終了アドレスを指定する (-r)", IDC_CHECK_STARTEND, 20, 195, 168, 8, WS_GROUP, WS_EX_LEFT
-    LTEXT           "開始アドレス", IDC_STATIC_START, 40, 215, 40, 9, NOT WS_GROUP | SS_LEFT, WS_EX_LEFT
+    AUTOCHECKBOX    "Disassemble block from <Start> to <End> (-r)", IDC_CHECK_STARTEND, 20, 195, 168, 8, WS_GROUP, WS_EX_LEFT
+    LTEXT           "Start addr", IDC_STATIC_START, 40, 215, 40, 9, NOT WS_GROUP | SS_LEFT, WS_EX_LEFT
     EDITTEXT        IDC_EDIT_START, 80, 212, 40, 14, ES_AUTOHSCROLL | ES_UPPERCASE, WS_EX_LEFT
-    LTEXT           "終了アドレス", IDC_STATIC_END, 135, 215, 40, 9, NOT WS_GROUP | SS_LEFT, WS_EX_LEFT
+    LTEXT           "End addr", IDC_STATIC_END, 135, 215, 40, 9, NOT WS_GROUP | SS_LEFT, WS_EX_LEFT
     EDITTEXT        IDC_EDIT_END, 175, 212, 40, 14, ES_AUTOHSCROLL | ES_UPPERCASE, WS_EX_LEFT
-    LTEXT           "バンクマップ指定 (-h/-l)", IDC_STATIC_BANKMAP, 20, 235, 70, 9, SS_LEFT, WS_EX_LEFT
-    AUTORADIOBUTTON "オート", IDC_RADIO_BM_AUTO, 40, 250, 30, 8, 0, WS_EX_LEFT
+    LTEXT           "Memory map (-h/-l)", IDC_STATIC_BANKMAP, 20, 235, 70, 9, SS_LEFT, WS_EX_LEFT
+    AUTORADIOBUTTON "Auto", IDC_RADIO_BM_AUTO, 40, 250, 30, 8, 0, WS_EX_LEFT
     AUTORADIOBUTTON "LoRom", IDC_RADIO_BM_LOROM, 80, 250, 30, 8, 0, WS_EX_LEFT
     AUTORADIOBUTTON "HiRom", IDC_RADIO_BM_HIROM, 120, 250, 30, 8, 0, WS_EX_LEFT
-    LTEXT           "ミラーアドレス (-s/-i)", IDC_STATIC_SHADOWADDR, 20, 265, 70, 9, SS_LEFT, WS_EX_LEFT
-    AUTORADIOBUTTON "オート", IDC_RADIO_SA_AUTO, 40, 280, 30, 8, 0, WS_EX_LEFT
-    AUTORADIOBUTTON "有効", IDC_RADIO_SA_ENABLE, 80, 280, 30, 8, 0, WS_EX_LEFT
-    AUTORADIOBUTTON "無効", IDC_RADIO_SA_DISABLE, 120, 280, 30, 8, 0, WS_EX_LEFT
+    LTEXT           "Shadow address (-s/-i)", IDC_STATIC_SHADOWADDR, 20, 265, 70, 9, SS_LEFT, WS_EX_LEFT
+    AUTORADIOBUTTON "Auto", IDC_RADIO_SA_AUTO, 40, 280, 30, 8, 0, WS_EX_LEFT
+    AUTORADIOBUTTON "Enable", IDC_RADIO_SA_ENABLE, 80, 280, 30, 8, 0, WS_EX_LEFT
+    AUTORADIOBUTTON "Disable", IDC_RADIO_SA_DISABLE, 120, 280, 30, 8, 0, WS_EX_LEFT
 END
 
 
@@ -207,13 +207,13 @@ BEGIN
     BEGIN
         BLOCK "041104b0"
         BEGIN
-            VALUE "CompanyName", "アメリコ\0"
-            VALUE "FileDescription", "ペリーの解析させてもらえませんか？\0"
+            VALUE "CompanyName", "Americo\0"
+            VALUE "FileDescription", "Perry's could you analyze it?\0"
             VALUE "FileVersion",     "1.0.0.1\0"
             VALUE "InternalName", "disperry\0"
             VALUE "LegalCopyright", "Copyright (C) 2017 boldowa  All rights reserved.\0"
             VALUE "OriginalFilename", "disperry.exe\0"
-            VALUE "ProductName", "Disperry ペリーの解析させてもらえませんか？\0"
+            VALUE "ProductName", "Disperry Perry's could you analyze it?\0"
             VALUE "ProductVersion",  "1.0.0.1\0"
         END
     END
@@ -236,26 +236,26 @@ END
 // System caption
 STRINGTABLE
 BEGIN
-	PERRY_DEBUG				"デバッグ情報"
-	PERRY_INFO				"情報"
-	PERRY_WARNING			"警告"
-	PERRY_ERROR				"エラー"
-	PERRY_FATAL				"致命的エラー"
+	PERRY_DEBUG				"Debug info"
+	PERRY_INFO				"Info"
+	PERRY_WARNING			"Warning"
+	PERRY_ERROR				"Error"
+	PERRY_FATAL				"Fatal error"
 END
 
 // Generic
 STRINGTABLE
 BEGIN
-	PERRY_DISPEL_NOT_FOUND			"Dispel.exe が見つからないため、アプリケーションを起動できません。"
-	PERRY_INI_LOAD_FAIL				"アプリケーション設定ファイルの読み込みに失敗しました。\n初期設定で起動しますか？"
-	PERRY_UNKNOWN_ERROR				"不明なエラーが発生しました。ファイルの選択に失敗しました。"
-	PERRY_FAILED_DISASSEMBLE		"逆アセンブルに失敗しました。\n[エラー情報]\n%s"
-	PERRY_INVALID_ON_DISASM			"不正なデータ設定が見つかりました。\n%s"
-	PERRY_INVALID_ON_EXIT			"不正なデータ設定が見つかりました。\n%s\nこのまま終了しますか？\n(次回起動時の設定データは、最後に逆アセンブルが成功した時の\n 設定になります)"
-	PERRY_SAMENAME_INOUT			"入力と出力のファイル名が同じです。"
-	PERRY_INVERT_BEG_END			"開始アドレスが終了アドレスと同じか、大きいです。"
-	PERRY_INI_WRITE_FAIL			"アプリケーション設定ファイルの更新に失敗しました。"
-	PERRY_WINAPI_FAILED				"WindowsAPIのコールで致命的なエラーが発生しました。\n[エラーコード: 0x%08x]\n%s\n場所: %s (API: %s)"
+	PERRY_DISPEL_NOT_FOUND			"Dispel.exe is missing. Can't start application."
+	PERRY_INI_LOAD_FAIL				"Failed to read the application config file.\nWould you like to launch it by default settings?"
+	PERRY_UNKNOWN_ERROR				"Unknown error occurred. Failed to select the file."
+	PERRY_FAILED_DISASSEMBLE		"Failed to disassemble.\n[Error info]\n%s"
+	PERRY_INVALID_ON_DISASM			"Invalid seting detected.\n%s"
+	PERRY_INVALID_ON_EXIT			"Invalid seting detected.\n%s\nDo you want to exit it anyway?\n(The next settings at startup will be the one at the time the disassemble succeeded last time)"
+	PERRY_SAMENAME_INOUT			"Input and Output file name are the same."
+	PERRY_INVERT_BEG_END			"The start address is the same as or greater than the end address."
+	PERRY_INI_WRITE_FAIL			"Failed to update the application config file."
+	PERRY_WINAPI_FAILED				"Fatal error occurred at calling WindowsAPI.\n[Error code: 0x%08x]\n%s\nLocation: %s (API: %s)"
 END
 
 // Debug
