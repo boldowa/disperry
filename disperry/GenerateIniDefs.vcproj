@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="GenerateIniDefs"
+	ProjectGUID="{127DE4F7-CB65-489D-9C5B-5B28E75AEB57}"
+	RootNamespace="GenerateIniDefs"
+	TargetFrameworkVersion="196613"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Generate|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="ソース ファイル"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
+			<File
+				RelativePath=".\AppConfigDefines.txt"
+				>
+				<FileConfiguration
+					Name="Generate|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="&quot;$(InputFileName)&quot; からヘッダファイルを生成しています。"
+						CommandLine="&quot;$(OutDir)\IniDefineGenerator.exe&quot; &quot;$(InputFileName)&quot;&#x0D;&#x0A;"
+						Outputs="$(InputName).h"
+					/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -10,3 +10,11 @@ but, I think that it works also on Windows 10.
 Microsoft VisualC++ Runtime (MSVCRT.DLL)
 
 Normally, you don't need to be particularly conscious.
+
+
+## Requires Library for build
+
+This program uses WTL(Windows Template Library).
+
+You should to install WTL.
+

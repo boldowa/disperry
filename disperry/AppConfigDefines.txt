@@ -1,0 +1,28 @@
+//------------------------------------------------
+// AppConfig macro template
+//   * this text is shaped with 4 tabs
+//------------------------------------------------
+// [Position] section
+int					posX						CW_USEDEFAULT
+int					posY						CW_USEDEFAULT
+// [File] section
+CString				inputPath					_T("")
+CString				outputPath					_T("")
+// [Dispel] section
+bool				enableSkipHeader			false
+bool				disableHexDump				false
+bool				is8bitsAccumlator			true
+bool				is8bitsIndexRegister		true
+bool				disableBoundary				false
+bool				enableSplit					true
+bool				enable1BankDisassemble		false
+bool				disableDisassemble			false
+bool				enableOrigin				false
+bool				enableRange					false
+int					hexWidth					16
+CString				disassembleBank				_T("0")
+CString				originAddress				_T("8000")
+CString				beginAddress				_T("8000")
+CString				endAddress					_T("FFFF")
+BankMode			bankMode					BankMode_Auto
+ShadowAddressMode	shadowMode					ShadowAddress_Auto

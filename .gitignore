@@ -30,3 +30,19 @@
 *.exe
 *.out
 *.app
+*.ini
+
+# Visual Studio non-source file
+*.suo
+*.ncb
+*.user
+
+# Visual Studio build object
+*.idb
+*.pdb
+*.ilk
+*.manifest
+*.res
+*.dep
+BuildLog.htm
+
