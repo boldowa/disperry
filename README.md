@@ -1,5 +1,5 @@
 # disperry
-Front-end for Dispel (SNES Disassembler)
+Front-end for [Dispel](https://github.com/pelrun/Dispel) (SNES Disassembler)
 
 ## Supported OS
 Windows 2000 - Windows 8.1
